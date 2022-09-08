@@ -12,8 +12,8 @@ const connectDB = require('./config/database')
 
 require('dotenv').config({path: './config/.env'})
 
-// Passport config
-// require('./config/passport')(passport)
+//Passport config
+require('./config/passport')(passport)
 
 connectDB()
 
@@ -41,7 +41,7 @@ app.use(passport.session())
 
 app.use(flash())
   
-// app.use('/', mainRoutes)
+app.use('/', mainRoutes)
 // app.use('/todos', todoRoutes)
  
 app.listen(process.env.PORT, ()=>{
