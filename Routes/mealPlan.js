@@ -7,7 +7,7 @@ rrouter.get('/profile', ensureAuth, mealPlanController.getProfile);
 
 router.get("/:id", ensureAuth, mealPlanController.getPost);
 
-router.post("/createPost", upload.single("file"), postsController.createPost);
+router.post("/createRecipe", upload.single("file"), mealPlanController.createPost);
 
 router.put("/likePost/:id", postsController.likePost);
 
