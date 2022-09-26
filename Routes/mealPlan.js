@@ -1,16 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const mealPlanController = require("../controllers/mealPlan");
+const upload = require("../middleware/multer");
+const mealPlanController = require("../controller/mealPlan");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-rrouter.get('/profile', ensureAuth, mealPlanController.getProfile);
+// router.post("/createMealPlan", upload.single("file"), mealPlanController.createPost);
 
-router.get("/:id", ensureAuth, mealPlanController.getPost);
-
-router.post("/createRecipe", upload.single("file"), mealPlanController.createPost);
-
-router.put("/likePost/:id", postsController.likePost);
-
-router.delete("/deletePost/:id", postsController.deletePost);
+// router.delete("/deleteMealPlan/:id", mealPlanController.deletePost);
 
 module.exports = router;

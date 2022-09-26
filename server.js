@@ -9,6 +9,7 @@ const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const mealPlanRoutes = require('./routes/mealPlan')
+const recipeRoutes = require('./routes/recipe')
 require('dotenv').config({path: './config/.env'})
 
 //Passport config
@@ -42,7 +43,8 @@ app.use(passport.session())
 app.use(flash())
   
 app.use('/', mainRoutes)
-//app.use('/mealPlan', mealPlanRoutes)
+app.use('/recipe',recipeRoutes)
+app.use('/mealPlan', mealPlanRoutes)
  
 app.listen(process.env.PORT, ()=>{
     console.log(`Connection Successful: Server running on port ${process.env.PORT}`)
