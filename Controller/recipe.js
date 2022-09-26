@@ -24,6 +24,13 @@ module.exports ={
             console.log(error)
         }
     },
+    getRecipe: async(req, res) => {
+        try {
+            
+        } catch (error) {
+            console.log(error)
+        }
+    },
     // getPost: async(req, res) =>{
     //     try {
             

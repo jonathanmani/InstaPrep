@@ -16,7 +16,7 @@ const RecipeSchema = new mongoose.Schema({
         type: Array,
         require: true,
       },
-      directions: {
+      instructions: {
         type: String,
         require: true,
       },
@@ -27,6 +27,9 @@ const RecipeSchema = new mongoose.Schema({
       user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
+      },
+      favourite: {
+        type: Boolean
       },
       createdAt: {
         type: Date,
