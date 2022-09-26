@@ -8,8 +8,7 @@ const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
-// const todoRoutes = require('./routes/todos')
-
+const mealPlanRoutes = require('./routes/mealPlan')
 require('dotenv').config({path: './config/.env'})
 
 //Passport config
@@ -43,7 +42,7 @@ app.use(passport.session())
 app.use(flash())
   
 app.use('/', mainRoutes)
-// app.use('/todos', todoRoutes)
+//app.use('/mealPlan', mealPlanRoutes)
  
 app.listen(process.env.PORT, ()=>{
     console.log(`Connection Successful: Server running on port ${process.env.PORT}`)
