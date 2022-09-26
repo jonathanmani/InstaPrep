@@ -14,10 +14,7 @@
         <%- include('partials/userDetails') -%>
       <div class="mt-5">
         <h2>Add a Recipe</h2>
-        <form
-          action="/post/createRecipe"
-          enctype="multipart/form-data"
-          method="POST"
+        <form action="/recipe/createRecipe" enctype="multipart/form-data" method="POST"
         >
           <div class="mb-3">
             <label for="name" class="form-label">Name</label>
@@ -32,14 +29,22 @@
             <textarea class="form-control" id="instructions" name="instructions"></textarea>
           </div>
           <div class="mb-3">
-            <label for="lunch" class="form-label">Lunch</label>
-            <input type="checkbox" class="form-control" id="lunch" name="lunch" value="Lunch"/>
-            <label for="dinner" class="form-label">Dinner</label>
-            <input type="checkbox" class="form-control" id="dinner" name="dinner" value="Dinner"/>
-            <label for="vegetarian" class="form-label">Vegetarian</label>
-            <input type="checkbox" class="form-control" id="vegetarian" name="vegetarian" value="Vegetarian"/>
-            <label for="nonVegetarian" class="form-label">Non-Vegetarian</label>
-            <input type="checkbox" class="form-control" id="nonVegetarian" name="nonVegetarian" value="Non-Vegetarian"/>
+            <div>
+                <label for="type" class="form-label">Lunch</label>
+                <input type="checkbox" id="lunch" name="type" value="Lunch"/>
+            </div>
+            <div>
+                <label for="type" class="form-label">Dinner</label>
+                <input type="checkbox" id="dinner" name="type" value="Dinner">
+            </div>
+            <div>
+                <label for="type" class="form-label">Vegetarian</label>
+                <input type="checkbox" id="vegetarian" name="type" value="Vegetarian"/>
+            </div>
+            <div>
+                <label for="type" class="form-label">Non-Vegetarian</label>
+                <input type="checkbox" id="nonVegetarian" name="type" value="Non-Vegetarian"/>
+            </div>
           </div>
           <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
         </form>
