@@ -29,3 +29,5 @@ const RecipeSchema = new mongoose.Schema({
         default: Date.now,
       },
 })
+
+module.exports = mongoose.model('Recipe', RecipeSchema)
