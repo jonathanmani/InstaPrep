@@ -1,19 +1,16 @@
-<%- include('partials/header') -%>
+<%- include('partials/appHeader') -%>
 
 <div class="container">
   <div class="row mt-5">
     <div class="col-6">
         <%- include('partials/userDetails') -%>
     </div>
-    <div class="col-6">
+    <div class="">
       <ul class="row list-unstyled">
         <% for(let i=0; i < recipes.length; i++) {%>
         <li class="col-6 justify-content-between mt-5">
-          <a href="/post/<%= recipes[i]._id %>">
-            <img
-              class="img-fluid"
-              src="<%= recipes[i].image%>"
-            />
+          <a href="/recipe/<%= recipes[i]._id %>">
+            <h2><%= recipes[i].name %></h2>
           </a>
         </li>
         <% } %>

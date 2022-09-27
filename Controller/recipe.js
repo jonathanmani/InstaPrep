@@ -4,7 +4,7 @@ const Recipe = require("../models/Recipe");
 const cloudinary = require('../middleware/cloudinary');
 
 module.exports ={
-    createRecipe: async(req,res) => {
+    addRecipe: async(req,res) => {
         try {
           // Upload image to cloudinary
             // const result = await cloudinary.uploader.upload(req.file.path);
@@ -31,21 +31,23 @@ module.exports ={
             console.log(error)
         }
     },
+    createRecipe: async(req, res) => {
+        try {
+            res.render('createRecipe.ejs')
+        } catch (error) {
+            console.log(error)
+        }
+    },
     getRecipe: async(req, res) => {
         try {
             const recipe = await Recipe.findById(req.params.id)
-            res.render('recipe.ejs', {
-                recipes : recipe
+            const user = await User.findOne({ _id: req.user.id })
+            res.render('profile.ejs', {
+                recipes: recipe,
+                user: user
             })
         } catch (error) {
             console.log(error)
         }
     },
-    // getPost: async(req, res) =>{
-    //     try {
-            
-    //     } catch (err) {
-    //         console.log(err)
-    //     }
-    // },
 }

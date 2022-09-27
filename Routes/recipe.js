@@ -5,8 +5,10 @@ const recipeController = require("../controller/recipe");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/:id", ensureAuth, recipeController.getRecipe);
-
+router.post("/addRecipe", upload.single("file"), recipeController.addRecipe);
 router.post("/createRecipe", upload.single("file"), recipeController.createRecipe);
+//router.get('/recipe', recipeController.getRecipe)
+
 
 //router.put("/likeRecipe/:id", recipeController.likeRecipe);
 
