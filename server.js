@@ -11,12 +11,14 @@ const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const mealPlanRoutes = require('./routes/mealPlan')
 const recipeRoutes = require('./routes/recipe')
+const path = require('path')
 require('dotenv').config({path: './config/.env'})
 
 //Passport config
 require('./config/passport')(passport) 
 
 connectDB()
+
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
