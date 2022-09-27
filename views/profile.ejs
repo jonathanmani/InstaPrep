@@ -1,54 +1,9 @@
 <%- include('partials/header') -%>
 
-<div>
-    <a
-      href="/logout"
-      class="col-3 btn btn-primary"
-      >Logout</a
-    >
-  </div>
-
 <div class="container">
   <div class="row mt-5">
     <div class="col-6">
         <%- include('partials/userDetails') -%>
-      <div class="mt-5">
-        <h2>Add a Recipe</h2>
-        <form action="/recipe/createRecipe" enctype="multipart/form-data" method="POST"
-        >
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" name="name"/>
-          </div>
-          <div class="mb-3">
-            <label for="ingredients" class="form-label">Ingredients</label>
-            <textarea class="form-control" id="ingredients" name="ingredients"></textarea>
-          </div>
-          <div class="mb-3">
-            <label for="instructions" class="form-label">Instructions</label>
-            <textarea class="form-control" id="instructions" name="instructions"></textarea>
-          </div>
-          <div class="mb-3">
-            <div>
-                <label for="type" class="form-label">Lunch</label>
-                <input type="checkbox" id="lunch" name="type" value="Lunch"/>
-            </div>
-            <div>
-                <label for="type" class="form-label">Dinner</label>
-                <input type="checkbox" id="dinner" name="type" value="Dinner">
-            </div>
-            <div>
-                <label for="type" class="form-label">Vegetarian</label>
-                <input type="checkbox" id="vegetarian" name="type" value="Vegetarian"/>
-            </div>
-            <div>
-                <label for="type" class="form-label">Non-Vegetarian</label>
-                <input type="checkbox" id="nonVegetarian" name="type" value="Non-Vegetarian"/>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-        </form>
-      </div>
     </div>
     <div class="col-6">
       <ul class="row list-unstyled">
