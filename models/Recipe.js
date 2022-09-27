@@ -28,7 +28,7 @@ const RecipeSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
       },
-      favourite: {
+      favorite: {
         type: Boolean
       },
       createdAt: {

@@ -42,7 +42,7 @@ module.exports ={
         try {
             const recipe = await Recipe.findById(req.params.id)
             const user = await User.findOne({ _id: req.user.id })
-            res.render('profile.ejs', {
+            res.render('recipe.ejs', {
                 recipes: recipe,
                 user: user
             })
@@ -50,4 +50,27 @@ module.exports ={
             console.log(error)
         }
     },
+    favoriteRecipe: async(req,res) => {
+        try {
+            await Recipe.findOneAndUpdate(
+                {_id: req.params.id},
+                {favorite : true},
+                {new: true}
+            )
+            console.log("Recipe Favorited!")
+            res.redirect(`/recipe/${req.params.id}`)
+        } catch (error) {
+            console.log(error)
+        }
+    },
+    deleteRecipe: async(req, res) => {
+        try {
+            let recipe = await Recipe.findById({_id: req.params.id });
+            await Recipe.remove({_id: req.params.id })
+            console.log('Deleted Recipe')
+            res.redirect('/profile')
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
