@@ -3,7 +3,23 @@
 <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="col-6">
-      <h2><%= recipes.name %></h2>
+      <h1><%= recipes.name %></h1>
+      <h3>Ingredients</h3>
+      <ol class="">
+        <% for(let i=0; i < recipes.ingredients.length; i++) {%>
+        <li class="col-6 justify-content-between mt-5">
+          <%= recipes.ingredients[i] %>
+        </li>
+        <% } %>
+      </ol>
+      <h3>Instructions</h3>
+      <ol class="">
+        <% for(let i=0; i < recipes.instructions.length; i++) {%>
+        <li class="col-6 justify-content-between mt-5">
+          <%= recipes.instructions[i] %>
+        </li>
+        <% } %>
+      </ol>
       <div class="row justify-content-between">
         <form
           class="col-1"
