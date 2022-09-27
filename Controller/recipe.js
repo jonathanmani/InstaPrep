@@ -13,8 +13,16 @@ module.exports ={
                 // image: result.secure_url,
                 type: req.body.type,
                 // cloudinaryId: result.public_id,
-                ingredients: req.body.ingredients.split(',').map(elem => elem.trim()),
-                instructions: req.body.instructions.split(',').map(elem => elem.trim()),
+                ingredients: req.body.ingredients.split(',')
+                .map(elem => {
+                    elem = elem.trim()
+                    return elem[0].toUpperCase() + elem.slice(1)
+                }),
+                instructions: req.body.instructions.split(',')
+                .map(elem =>{
+                    elem = elem.trim()
+                    return elem[0].toUpperCase() + elem.slice(1)
+                }),
                 user: req.user.id,
             });
             console.log('Post has been added!');
