@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/jonathanmani/MealPlanner#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.2.0",
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.32.0",
     "connect-mongo": "^4.6.0",
