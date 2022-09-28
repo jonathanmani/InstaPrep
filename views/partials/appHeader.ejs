@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="autumn">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,30 +12,31 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     /> -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
-    />
+    /> -->
     <link href="/css/style.css" rel="stylesheet">
   </head>
-  <body class="px-12">
-    <header class="flex flex-row justify-around">
-      <div class="text-left">
-        <h1 class="text-4xl">My Meal Planner</h1>
-        <span>Prep your meals in seconds!</span>
+  
+  <body>
+    <div class="navbar bg-primary text-primary-content">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl">InstaPrep</a>
       </div>
-      <div class="text-right">
-        <a href="/profile">Home</a>
-        <a href="#">Favorites</a>
-        <form action="/recipe/createRecipe" method="POST">
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li><a href="/profile">Home</a></li>
+          <li><a href="#">Favorites</a></li>
+          <form action="/recipe/createRecipe" method="POST">
             <button type="submit" class="">Create Recipe</button>
-        </form>
-        <a href="/logout" class="col-1 btn btn-secondary">Logout</a>
+          </form>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
       </div>
-
-    </header>
+    </div>
   </body>
 </html>
 

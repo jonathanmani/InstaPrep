@@ -3,6 +3,9 @@ module.exports = {
   content: [
     "./views/**/*.ejs",
   ],
+  daisyui: {
+    themes: ["autumn"]
+  },
   theme: {
     extend: {},
   },
