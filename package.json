@@ -4,9 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "tailwindcss -i src/style.css -o public/style.css --watch"
+    "build-css": "tailwindcss -i src/css/style.css -o public/css/style.css --watch"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,9 @@
     "validator": "^13.7.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.16",
+    "postcss-import": "^15.0.0",
     "tailwindcss": "^3.1.8"
   }
 }
