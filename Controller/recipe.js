@@ -63,6 +63,19 @@ module.exports ={
             console.log(error)
         }
     },
+    unfavoriteRecipe: async(req,res) => {
+        try {
+            await Recipe.findOneAndUpdate(
+                {_id: req.params.id},
+                {favorite : false},
+                {new: true}
+            )
+            console.log("Recipe Favorited!")
+            res.redirect(`/recipe/${req.params.id}`)
+        } catch (error) {
+            console.log(error)
+        }
+    },
     deleteRecipe: async(req, res) => {
         try {
             let recipe = await Recipe.findById({_id: req.params.id });
