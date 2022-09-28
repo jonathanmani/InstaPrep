@@ -4,37 +4,42 @@
     <div class="w-8/12 mx-auto mt-6">
       <h1 class="text-6xl"><%= recipes.name %></h1>
       <h3 class="text-3xl pt-3">Ingredients</h3>
-      <ol class="">
+      <ul class="menu bg-base-100 w-56 rounded-box">
         <% for(let i=0; i < recipes.ingredients.length; i++) {%>
-        <li class="col-6 justify-content-between mt-5">
-          <%= recipes.ingredients[i] %>
-        </li>
+        <li class="py-1"><%= recipes.ingredients[i] %></li>
         <% } %>
-      </ol>
-      <h3>Instructions</h3>
-      <ol class="">
+      </ul>
+
+
+    
+      <h3 class="text-3xl pt-3">Instructions</h3>
+      <ul class="menu bg-base-100 w-56 rounded-box">
         <% for(let i=0; i < recipes.instructions.length; i++) {%>
-        <li class="col-6 justify-content-between mt-5">
-          <%= recipes.instructions[i] %>
-        </li>
+        <li class="py-1"><%= recipes.instructions[i] %></li>
         <% } %>
-      </ol>
+      </ul>
+
       <div class="row justify-content-between">
         <form
           class="col-1"
           action="/recipe/favoriteRecipe/<%= recipes.id %>?_method=PUT"
           method="POST"
         >
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
+        <button class="btn gap-2" type="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+          Favorite
+        </button>
         </form>
-        <h3 class="col-3">Favorite: <%= recipes.favorite %></h3>
+        <h3><%= recipes.favorite %></h3>
         <%if(recipes.user._id == user.id){ %>
         <form
           action="/recipe/deleteRecipe/<%= recipes.id %>?_method=DELETE"
           method="POST"
           class="col-3"
         >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
+        <button class="btn gap-2" type="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg> Delete
+        </button>
         </form>
         <%}%>  
       </div>
