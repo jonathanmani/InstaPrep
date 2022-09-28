@@ -1,22 +1,27 @@
 <%- include('partials/appHeader') -%>
 
-<div class="container">
-  <div class="row mt-5">
+
+  <div class="mx-auto w-10/12 pt-7 pb-12">
     <div class="col-6">
-        <%- include('partials/userDetails') -%>
-    </div>
-    <div class="">
-      <ul class="row list-unstyled">
-        <% for(let i=0; i < recipes.length; i++) {%>
-        <li class="col-6 justify-content-between mt-5">
-          <a href="/recipe/<%= recipes[i]._id %>">
-            <h2><%= recipes[i].name %></h2>
-          </a>
-        </li>
-        <% } %>
-      </ul>
-    </div>
+      <%- include('partials/userDetails') -%>
   </div>
-</div>
+
+  <div class="flex flex-row flex-wrap">
+    <% for(let i=0; i < recipes.length; i++) {%>
+      <div class="card w-96 bg-base-100 shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title"><%= recipes[i].name %></h2>
+          <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary"><a href="/recipe/<%= recipes[i]._id %>">Recipe</button>
+          </div>
+        </div>
+      </div>
+      <% } %>
+  </div>
+  </div>
+    
+
+
 
 <%- include('partials/footer') -%>
