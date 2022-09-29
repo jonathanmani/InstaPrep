@@ -18,7 +18,7 @@ module.exports ={
                     elem = elem.trim()
                     return elem[0].toUpperCase() + elem.slice(1)
                 }),
-                instructions: req.body.instructions.split(',')
+                instructions: req.body.instructions.split('/')
                 .map(elem =>{
                     elem = elem.trim()
                     return elem[0].toUpperCase() + elem.slice(1)
