@@ -46,12 +46,13 @@
           <li class="py-1 font-bold"><%= recipes.ingredients[i] %></li>
           <% } %>
         </ul>
-        <ul class="menu bg-base-100 w-2/4 rounded-box">
+        <div class="menu bg-base-100 w-2/4 rounded-box">
           <% for(let i=0; i < recipes.instructions.length; i++) {%>
-          <li class="py-1"><%= [i+1] %>. <%= recipes.instructions[i] %></li>
+          <p class="py-1 break-normal"><%= [i+1] %>. <%= recipes.instructions[i] %></p>
           <% } %>
-        </ul>
+        </div>
       </div>
+
 
     
       

@@ -13,12 +13,12 @@ module.exports ={
                 // image: result.secure_url,
                 type: req.body.type,
                 // cloudinaryId: result.public_id,
-                ingredients: req.body.ingredients.split(',')
+                ingredients: req.body.ingredients.split(/\r?\n|\r|\n/g)
                 .map(elem => {
                     elem = elem.trim()
                     return elem[0].toUpperCase() + elem.slice(1)
                 }),
-                instructions: req.body.instructions.split('/')
+                instructions: req.body.instructions.split(/\r?\n|\r|\n/g)
                 .map(elem =>{
                     elem = elem.trim()
                     return elem[0].toUpperCase() + elem.slice(1)
