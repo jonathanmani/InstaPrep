@@ -2,22 +2,20 @@
 
 
     <div class="w-8/12 mx-auto mt-6">
-      <div class="flex flex-flow justify-evenly">
-        <h1 class="text-6xl"><%= recipes.name %></h1>
-        <div class="flex flex-row">
+      <div class="flex flex-flow justify-start">
+        <h1 class="text-6xl mr-5"><%= recipes.name %></h1>
+        <div class="flex flex-row mr-3">
           <% if(recipes.favorite === false) {%>
           <form
-            class="col-1"
             action="/recipe/favoriteRecipe/<%= recipes.id %>?_method=PUT"
             method="POST"
           >
-          <button class="btn no-animation" type="submit">
+          <button class="btn no-animation h-fit" type="submit">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
           </button>
         </form>
         <%} else { %>
           <form
-            class="col-1"
             action="/recipe/unfavoriteRecipe/<%= recipes.id %>?_method=PUT"
             method="POST"
           >
@@ -28,19 +26,17 @@
           </form>
         </div>
 
-        <div>
+        
           <%if(recipes.user._id == user.id){ %>
           <form
             action="/recipe/deleteRecipe/<%= recipes.id %>?_method=DELETE"
             method="POST"
-            class="col-3"
           >
-          <button class="btn no-animation fa-solid fa-trash" type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+          <button class="btn fa fa-solid fa-trash" type="submit">
           </button>
           </form>
           <%}%>  
-        </div>
+        
       </div>
 
 
@@ -58,7 +54,6 @@
       </div>
 
     
-
       
   </div>
 
