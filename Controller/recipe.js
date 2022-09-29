@@ -6,13 +6,13 @@ const cloudinary = require('../middleware/cloudinary');
 module.exports ={
     addRecipe: async(req,res) => {
         try {
-          // Upload image to cloudinary
+          //Upload image to cloudinary
             // const result = await cloudinary.uploader.upload(req.file.path);
             await Recipe.create({
                 name: req.body.name,
-                // image: result.secure_url,
+                image: req.body.image,
                 type: req.body.type,
-                // cloudinaryId: result.public_id,
+                //cloudinaryId: result.public_id,
                 ingredients: req.body.ingredients.split(/\r?\n|\r|\n/g)
                 .map(elem => {
                     elem = elem.trim()

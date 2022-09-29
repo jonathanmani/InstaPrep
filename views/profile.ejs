@@ -1,24 +1,27 @@
 <%- include('partials/appHeader') -%>
 
 
-  <div class="mx-auto w-10/12 pt-7 pb-12">
+  <div class="mx-auto w-11/12 pt-7 pb-12">
     <div class="col-6">
       <%- include('partials/userDetails') -%>
   </div>
 
-  <div class="flex flex-row flex-wrap">
+
+<div class="flex flex-row flex-wrap gap-6 justify-evenly">
     <% for(let i=0; i < recipes.length; i++) {%>
-      <div class="card w-96 bg-base-100 shadow-xl">
-        <div class="card-body">
-          <h2 class="card-title"><%= recipes[i].name %></h2>
-          <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary"><a href="/recipe/<%= recipes[i]._id %>">Recipe</button>
-          </div>
-        </div>
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+    <div class="card-body">
+      <h2 class="card-title"><%= recipes[i].name %></h2>
+      <p>Tags go here</p>
+      <div class="card-actions justify-end">
+        <button class="btn"><a href="/recipe/<%= recipes[i]._id %>">Recipe</button>
       </div>
-      <% } %>
+    </div>
   </div>
+  <% } %>
+
+</div>
   </div>
     
 
