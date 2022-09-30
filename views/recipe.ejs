@@ -4,6 +4,9 @@
     <div class="w-10/12 mx-auto mt-6">
       <div class="flex flex-flow justify-start">
         <h1 class="text-6xl mr-5"><%= recipes.name %></h1>
+        <form action="/recipe/editRecipe/<%= recipes.id %>?_method=PUT" method="POST">
+          <button class="btn" type="submit">Edit</button>
+        </form>
         <div class="flex flex-row mr-3">
           <% if(recipes.favorite === false) {%>
           <form

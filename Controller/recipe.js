@@ -85,5 +85,32 @@ module.exports ={
         } catch (error) {
             console.log(error)
         }
+    },
+    editRecipe: async(req, res) => {
+        try {
+            const recipe = await Recipe.findById(req.params.id)
+            res.render('editRecipe.ejs', {
+                recipes: recipe,
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    },
+    updateRecipe: async(req, res) => {
+        try {
+            await Recipe.findOneAndUpdate(
+                {_id: req.params.id},
+                {name : req.body.name},
+                {image : req.body.image},
+                {type: req.body.type},
+                {ingredients: req.body.ingredients},
+                {instructions: req.body.instructions},
+                {new: true}
+            )
+            console.log("Recipe Updated!")
+            res.redirect(`/recipe/${req.params.id}`)
+        } catch (error) {
+            console.log(error)
+        }
     }
 }

@@ -10,6 +10,8 @@ router.post("/createRecipe", upload.single("file"), recipeController.createRecip
 router.put("/favoriteRecipe/:id", recipeController.favoriteRecipe);
 router.put("/unfavoriteRecipe/:id", recipeController.unfavoriteRecipe);
 router.delete("/deleteRecipe/:id", recipeController.deleteRecipe);
+router.put("/editRecipe/:id", recipeController.editRecipe)
+router.put("/updateRecipe/:id", recipeController.updateRecipe)
 //router.get('/recipe', recipeController.getRecipe)
 
 

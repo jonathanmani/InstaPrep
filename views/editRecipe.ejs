@@ -1,0 +1,50 @@
+<%- include('partials/appHeader') -%>
+
+<div class="w-5/12 center mx-auto">
+    <h2 class="py-5 text-5xl text-center">Edit Recipe</h2>
+    <form action="/recipe/updateRecipe/<%= recipes.id %>" enctype="multipart/form-data" method="POST"
+    >
+        <div class="form-control w-full max-w-xs">
+            <label class="label">Name</label>
+            <input type="text" id="name" name="name" value="<%= recipes.name %>" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+        </div>
+        <div class="">
+            <label class="label">Image</label>
+            <input type="text" id="image" name="image" value="<%= recipes.image %>" placeholder="place an image of your recipe" class="input input-bordered w-full max-w-xs"/>
+        </div>
+        <div class="form-control">
+            <label class="label">Ingredients</label> 
+            <textarea class="textarea textarea-bordered h-24" value="<%= recipes.ingredients %>" placeholder="Type ingredients separated by commas (eg. bread, milk, eggs)" id="ingredients" name="ingredients"></textarea>
+        </div>
+        <div class="form-control">
+            <label class="label">Instructions</label> 
+            <textarea class="textarea textarea-bordered h-24" value="<%= recipes.instructions %>" placeholder="Type instructions separated by equal sign (eg. spread butter = beat eggs= whisk milk)" id="instructions" name="instructions"></textarea>
+        </div>
+        <div>
+            <div class="form-control">
+                <label class="label cursor-pointer" for="type">Lunch
+                    <input type="checkbox" id="lunch" name="type" value="Lunch" class="checkbox checkbox-primary" />
+                </label>
+            </div>
+            <div class="form-control">
+                <label class="label cursor-pointer" for="type">Dinner
+                    <input type="checkbox" id="dinner" name="type" value="Dinner" class="checkbox checkbox-primary" />
+                </label>
+            </div>
+            <div class="form-control">
+                <label class="label cursor-pointer" for="type">Vegetarian
+                    <input type="checkbox" id="vegetarian" name="type" value="Vegetarian" class="checkbox checkbox-primary" />
+                </label>
+            </div>
+            <div class="form-control">
+                <label class="label cursor-pointer" for="type">Non-Vegetarian
+                    <input type="checkbox" id="nonVegetarian" name="type" value="Non-Vegetarian" class="checkbox checkbox-primary" />
+                </label>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-active btn-primary mt-5 mb-5 mx-auto" value="Upload">Submit</button>
+    </form>
+    </div>
+
+<%- include('partials/footer') -%>
