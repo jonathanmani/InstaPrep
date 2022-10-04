@@ -10,7 +10,7 @@
 <div class="flex flex-row flex-wrap gap-6 justify-evenly">
     <% for(let i=0; i < recipes.length; i++) {%>
   <div class="card w-96 bg-base-100 shadow-xl">
-    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+    <figure class="mt-10"><img class="aspect-square w-72 rounded" src="<%= recipes[i].image %>" alt="Recipe Image" /></figure>
     <div class="card-body">
       <h2 class="card-title"><%= recipes[i].name %></h2>
       <p>Tags go here</p>

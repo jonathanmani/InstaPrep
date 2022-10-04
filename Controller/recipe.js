@@ -104,8 +104,16 @@ module.exports ={
                     name: req.body.name,
                     image: req.body.image,
                     type: req.body.type,
-                    ingredients: req.body.ingredients,
-                    instructions: req.body.instructions
+                    ingredients: req.body.ingredients.split(/\r?\n|\r|\n/g)
+                    .map(elem => {
+                        elem = elem.trim()
+                        return elem[0].toUpperCase() + elem.slice(1)
+                    }),
+                    instructions: req.body.instructions.split(/\r?\n|\r|\n/g)
+                    .map(elem => {
+                        elem = elem.trim()
+                        return elem[0].toUpperCase() + elem.slice(1)
+                    })
                 },
                 {new:true}
             )
