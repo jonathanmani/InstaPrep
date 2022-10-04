@@ -2,7 +2,7 @@
 
 <div class="w-5/12 center mx-auto">
     <h2 class="py-5 text-5xl text-center">Edit Recipe</h2>
-    <form action="/recipe/updateRecipe/<%= recipes.id %>" enctype="multipart/form-data" method="POST"
+    <form action="/recipe/updateRecipe/<%= recipes.id %>?_method=PUT" method="POST"
     >
         <div class="form-control w-full max-w-xs">
             <label class="label">Name</label>
