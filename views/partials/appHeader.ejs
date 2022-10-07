@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" data-theme="autumn">
   <head>
@@ -18,17 +17,16 @@
   <body>
     <div class="navbar bg-primary text-primary-content">
       <div class="flex-1">
-        <a class="btn btn-ghost normal-case text-3xl" href="/profile">InstaPrep</a>
+        <a 
+        class="btn btn-ghost normal-case text-3xl" 
+        href="/profile">
+        InstaPrep
+      </a>
       </div>
       <div class="flex-none">
         <ul class="menu menu-horizontal p-0">
           <li><a href="/profile">Home</a></li>
-          <li><a href="/recipe/getFavorites">Favorites2</a></li>
-          <li>
-            <form action="/recipe/getFavorites" method="GET">
-              <button type="submit">Favorites</button>
-            </form>
-          </li>
+          <li><a href="/favorites">Favorites</a></li>
           <li>  
             <form action="/recipe/createRecipe" method="POST">
               <button type="submit">Create Recipe</button>

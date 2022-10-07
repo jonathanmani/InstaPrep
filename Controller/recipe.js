@@ -47,16 +47,7 @@ module.exports ={
                 user: user
             })
         } catch (error) {
-            console.log(error)
-        }
-    },
-    getFavorites: async(req, res) => {
-        try {
-            const recipe = await Recipe.find({ favorite:true })
-            console.log("Got all the favorites", recipe)
-            res.render('favorites.ejs', { favRecipes: recipe })
-        } catch (error) {
-            console.log(error)
+            console.log("This is a getRecipe error: ",error)
         }
     },
     favoriteRecipe: async(req,res) => {
@@ -131,6 +122,6 @@ module.exports ={
         } catch (error) {
             console.log(error)
         }
-    },
+    }
     
 }

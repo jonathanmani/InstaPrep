@@ -17,5 +17,15 @@ module.exports = {
         } catch (err) {
             console.log(err)
         }
+    },
+    getFavorites: async(req, res) => {
+        try {
+            const recipe = await Recipe.find({ favorite:true })
+            const user = await User.findOne({ _id: req.user.id })
+            console.log("Got all the favorites", recipe);
+            res.render('favorites.ejs', { favRecipes: recipe, user:user });
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
