@@ -23,10 +23,15 @@
       <div class="flex-none">
         <ul class="menu menu-horizontal p-0">
           <li><a href="/profile">Home</a></li>
-          <li><a href="#">Favorites</a></li>
+          <li><a href="/recipe/getFavorites">Favorites2</a></li>
+          <li>
+            <form action="/recipe/getFavorites" method="GET">
+              <button type="submit">Favorites</button>
+            </form>
+          </li>
           <li>  
             <form action="/recipe/createRecipe" method="POST">
-              <button type="submit" class="">Create Recipe</button>
+              <button type="submit">Create Recipe</button>
             </form>
           </li>
           

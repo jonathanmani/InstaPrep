@@ -1,0 +1,30 @@
+<%- include('partials/appHeader') -%>
+
+
+  <div class="mx-auto w-11/12 pt-7 pb-12">
+    <div class="col-6">
+      <%- include('partials/userDetails') -%>
+  </div>
+
+
+<div class="flex flex-row flex-wrap gap-6 justify-evenly">
+    <% for(let i=0; i < favRecipes.length; i++) {%>
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <figure class="mt-10"><img class="aspect-square w-72 rounded" src="<%= favRecipes[i].image %>" alt="Recipe Image" /></figure>
+    <div class="card-body">
+      <h2 class="card-title"><%= favRecipes[i].name %></h2>
+      <p>Tags go here</p>
+      <div class="card-actions justify-end">
+        <button class="btn"><a href="/recipe/<%= favRecipes[i]._id %>">Recipe</button>
+      </div>
+    </div>
+  </div>
+  <% } %>
+
+</div>
+  </div>
+    
+
+
+
+<%- include('partials/footer') -%>

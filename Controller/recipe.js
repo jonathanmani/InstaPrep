@@ -50,6 +50,15 @@ module.exports ={
             console.log(error)
         }
     },
+    getFavorites: async(req, res) => {
+        try {
+            const recipe = await Recipe.find({ favorite:true })
+            console.log("Got all the favorites", recipe)
+            res.render('favorites.ejs', { favRecipes: recipe })
+        } catch (error) {
+            console.log(error)
+        }
+    },
     favoriteRecipe: async(req,res) => {
         try {
             await Recipe.findOneAndUpdate(
@@ -122,5 +131,6 @@ module.exports ={
         } catch (error) {
             console.log(error)
         }
-    }
+    },
+    
 }
