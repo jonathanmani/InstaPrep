@@ -1,0 +1,74 @@
+<%- include('partials/appHeader') -%>
+
+<div class="w-5/12 center mx-auto">
+    <h2 class="py-5 text-5xl text-center">Create Your MealPlan for this week</h2>
+    <form action="/mealPlan/addMealPlan" enctype="multipart/form-data" method="POST"
+    >
+        <div class="form-control w-full max-w-xs">
+            <label class="label">Name for this MealPlan</label>
+            <input type="text" id="name" name="name" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+        </div>
+        <div class="form-control w-full max-w-xs">
+            <label class="label">Select Your Start Date</label>
+            <input type="date" id="startDate" name="startDate" class="input input-bordered w-full max-w-xs" />
+        </div>
+        <div class="form-control w-full max-w-xs">
+            <label class="label">Select Your End Date</label>
+            <input type="date" id="endDate" name="endDate" class="input input-bordered w-full max-w-xs" />
+        </div>
+        <div>
+            <h4>What Days will you be Cooking?</h4>
+            <div class="form-control">
+                <label class="label cursor-pointer" for="daysCooking">Sunday
+                    <input type="checkbox" id="Sunday" name="daysCooking" value="Sunday" class="checkbox checkbox-primary" />
+                </label>
+            </div>
+            <div class="form-control">
+                <label class="label cursor-pointer" for="daysCooking">Monday
+                    <input type="checkbox" id="Monday" name="daysCooking" value="Monday" class="checkbox checkbox-primary" />
+                </label>
+            </div>
+            <div class="form-control">
+                <label class="label cursor-pointer" for="daysCooking">Tuesday
+                    <input type="checkbox" id="Tuesday" name="daysCooking" value="Tuesday" class="checkbox checkbox-primary" />
+                </label>
+            </div>
+            <div class="form-control">
+                <label class="label cursor-pointer" for="daysCooking">Wednesday
+                    <input type="checkbox" id="Wednesday" name="daysCooking" value="Wednesday" class="checkbox checkbox-primary" />
+                </label>
+            </div>
+            <div class="form-control">
+                <label class="label cursor-pointer" for="daysCooking">Thursday
+                    <input type="checkbox" id="Thursday" name="daysCooking" value="Thursday" class="checkbox checkbox-primary" />
+                </label>
+            </div>
+            <div class="form-control">
+                <label class="label cursor-pointer" for="daysCooking">Friday
+                    <input type="checkbox" id="Friday" name="daysCooking" value="Friday" class="checkbox checkbox-primary" />
+                </label>
+            </div>
+            <div class="form-control">
+                <label class="label cursor-pointer" for="daysCooking">Saturday
+                    <input type="checkbox" id="Saturday" name="daysCooking" value="Saturday" class="checkbox checkbox-primary" />
+                </label>
+            </div>
+        </div>
+        <div>
+            <h4>What Meals will you be preparing each day?</h4>
+            <div class="form-control">
+                <label class="label cursor-pointer" for="mealType">Lunch
+                    <input type="checkbox" id="Lunch" name="mealType" value="Lunch" class="checkbox checkbox-primary" />
+                </label>
+            </div>
+            <div class="form-control">
+                <label class="label cursor-pointer" for="mealType">Dinner
+                    <input type="checkbox" id="Dinner" name="mealType" value="Dinner" class="checkbox checkbox-primary" />
+                </label>
+            </div>
+        </div>  
+        <button type="submit" class="btn btn-active btn-primary mt-5 mb-5 mx-auto" value="Upload">Submit</button>
+    </form>
+    </div>
+
+<%- include('partials/footer') -%>
