@@ -23,7 +23,7 @@ module.exports ={
                 favorite: req.body.favorite
             });
             console.log('added Meal Plan')
-            res.redirect(`/mealPlan/${req.params.id}`)
+            res.redirect('/profile')
 
         } catch (error) {
             console.log(error)
