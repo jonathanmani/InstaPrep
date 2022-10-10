@@ -1,0 +1,21 @@
+<%- include('partials/appHeader') -%>
+
+<div class="flex flex-row flex-wrap gap-6 justify-evenly">
+  <% for(let i=0; i<mealPlans.length; i++) {%>
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card-body">
+      <h2 class="card-title"><%= mealPlans[i].name%></h2>
+      <p>Tags go here</p>
+      <div class="card-actions justify-end">
+          <button class="btn">
+            <a href="/mealPlan/<%= mealPlans[i]._id%>">
+              Go to MealPlan
+            </a>
+          </button>
+      </div>
+    </div>
+  </div>
+  <% } %>
+</div>
+
+<%- include('partials/footer') -%>

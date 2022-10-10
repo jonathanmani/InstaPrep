@@ -21,6 +21,12 @@ const MealPlanSchema = new mongoose.Schema({
         type: Array,
         require: true,
     },
+    lunches: {
+        type: Array
+    },
+    dinners: {
+        type: Array
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",

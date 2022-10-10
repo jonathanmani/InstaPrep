@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const Profile = require("../models/Profile");
 const Recipe = require("../models/Recipe");
+const MealPlan = require("../models/MealPlan");
 const cloudinary = require('../middleware/cloudinary');
 
 module.exports = {
@@ -27,5 +28,14 @@ module.exports = {
         } catch (error) {
             console.log(error)
         }
+    },
+    getMealPlan: async(req, res) => {
+        try {
+            const mealPlan = await MealPlan.find()
+            res.render('mealPlans.ejs', {mealPlans: mealPlan})
+        } catch (error) {
+            console.log(error)
+        }
     }
+
 }
