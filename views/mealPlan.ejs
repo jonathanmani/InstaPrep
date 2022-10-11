@@ -1,21 +1,31 @@
 <%- include('partials/appHeader') -%>
 
-
-<div>
-    <h1 class="text-6xl mr-5"><%= mealPlan.name %></h1>
-</div>
-<ul>
-    <% for(let i = 0; i<lunches.length; i++) {%>
-        <li><%= lunches[i][1].name%></li>
+<div class="card lg:card-side bg-base-100 shadow-xl m-5">
+    <figure><img class="ml-5 rounded" src="https://placeimg.com/400/400/arch" alt="Album"/></figure>
+    <div class="card-body">
+      <h1 class="card-title text-4xl mb-3 text-primary"><%= mealPlan.name %></h1>
+      <% for(let i = 0; i<daysCooking.length; i++) {%>
+        <h2 class="text-3xl text-secondary"><%= mealPlan.daysCooking[i] %></h2>
+        <%if(lunches.length > 0){ %>
+            <div class="flex flex-row mt-2 mb-2">
+                <h3 class="text-xl font-bold mr-2">Lunch: </h3>
+                <p class="text-lg"><%= lunches[i] %></p>
+            </div>
+        <%}%>
+        <%if(dinners.length > 0){ %>
+            <div class="flex flex-row mt-2 mb-2">
+                <h3 class="text-xl font-bold mr-2">Dinner: </h3>
+                <p class="text-lg"><%= dinners[i] %></p>
+            </div>
+            
+        <%}%>
     <% } %>
-</ul>
-
-<ul>
-    <% for(let i = 0; i<dinners.length; i++) {%>
-        <li><%= dinners[i][1].name%></li>
-    <% } %>
-</ul>
-
+    
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary" onclick="window.print();">Print</button>
+      </div>
+    </div>
+  </div>
 
 
 

@@ -8,13 +8,7 @@ const moment = require('moment');
 module.exports ={
     createMealPlan: async(req, res) => {
         try {
-            const date = new Date()
-            let minDate = moment(date)
-            let maxDate = moment(minDate).add(7,'days').format('YYYY-MM-DD')
-            res.render('createMealPlan.ejs', {
-                minDate: minDate,
-                maxDate: maxDate
-            })
+            res.render('createMealPlan.ejs')
         } catch (error) {
             console.log(error)
         }
@@ -102,12 +96,24 @@ module.exports ={
         try {
             const mealPlan = await MealPlan.findById(req.params.id)
             const lunchEntries = Object.entries(mealPlan.lunches)            
-            const dinnersEntries = Object.entries(mealPlan.dinners)            
+            const dinnersEntries = Object.entries(mealPlan.dinners)
+            const daysCooking = Object.entries(mealPlan.daysCooking) 
+            const lunchNames = []          
+            const dinnerNames = []
+            for(let i = 0; i < daysCooking.length; i++ ){
+                if(lunchEntries.length > 0){
+                    lunchNames.push(lunchEntries[i][1].name)
+                }
+                if(dinnersEntries.length > 0){
+                    dinnerNames.push(dinnersEntries[i][1].name)
+                }   
+            } 
             const user = await User.findOne({ _id: req.user.id })
             res.render('mealPlan.ejs', { 
                 mealPlan: mealPlan,
-                lunches: lunchEntries,
-                dinners: dinnersEntries, 
+                lunches: lunchNames,
+                dinners: dinnerNames, 
+                daysCooking: daysCooking,
                 user: user
             });
         } catch (err) {
