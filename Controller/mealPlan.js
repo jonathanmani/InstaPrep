@@ -64,12 +64,13 @@ module.exports ={
     getMealPlan: async(req, res) => {
         try {
             const mealPlan = await MealPlan.findById(req.params.id)
-            const recipe = await Recipe.find();
-            
+            const lunchEntries = Object.entries(mealPlan.lunches)            
+            const dinnersEntries = Object.entries(mealPlan.dinners)            
             const user = await User.findOne({ _id: req.user.id })
-            console.log(user);
             res.render('mealPlan.ejs', { 
-                mealPlan: mealPlan, 
+                mealPlan: mealPlan,
+                lunches: lunchEntries,
+                dinners: dinnersEntries, 
                 user: user
             });
         } catch (err) {

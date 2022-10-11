@@ -4,16 +4,17 @@
 <div>
     <h1 class="text-6xl mr-5"><%= mealPlan.name %></h1>
 </div>
-
-<ul class="steps steps-vertical">
-  <li class="step step-primary">Register</li>
-  <li class="step step-primary">Choose plan</li>
-  <li class="step">Purchase</li>
-  <li class="step">Receive Product</li>
+<ul>
+    <% for(let i = 0; i<lunches.length; i++) {%>
+        <li><%= lunches[i][1].name%></li>
+    <% } %>
 </ul>
 
-
-
+<ul>
+    <% for(let i = 0; i<dinners.length; i++) {%>
+        <li><%= dinners[i][1].name%></li>
+    <% } %>
+</ul>
 
 
 
