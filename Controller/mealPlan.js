@@ -3,17 +3,25 @@ const Profile = require("../models/Profile");
 const Recipe = require("../models/Recipe");
 const MealPlan = require("../models/MealPlan");
 const cloudinary = require('../middleware/cloudinary');
+const moment = require('moment');
 
 module.exports ={
     createMealPlan: async(req, res) => {
         try {
-            res.render('createMealPlan.ejs')
+            const date = new Date()
+            let minDate = moment(date)
+            let maxDate = moment(minDate).add(7,'days').format('YYYY-MM-DD')
+            res.render('createMealPlan.ejs', {
+                minDate: minDate,
+                maxDate: maxDate
+            })
         } catch (error) {
             console.log(error)
         }
     },
     addMealPlan: async(req, res) => {
         try {
+            //Gathering and Randomizing all Lunches and Dinners in Database
             let recipe = await Recipe.find();
             let mealPlanLunch = []
             let mealPlanDinner = []
@@ -42,12 +50,41 @@ module.exports ={
                 }
             }
             console.log('mealPlanLunches', mealPlanLunch, 'mealPlanDinner', mealPlanDinner)
+
+
+            // Using moment to create a list of days from startDate to endDate
+            function getDateArray(obj){
+                var start = obj.startDate.clone();
+                var end = obj.endDate.clone();
+                var res = [];
+                while(start.isBefore(end)){
+                  var day = start.format('dddd');
+                  if( obj[day] ){
+                    res.push(start.toDate());
+                  }
+                  start.add(1, 'd');
+                }
+                return res;
+            }
+            const obj = {}
+            let cookingDays = req.body.daysCooking
+
+            for(const day in cookingDays){
+                obj[cookingDays[day]] = true
+            }
+            obj.startDate = moment(req.body.startDate)
+            obj.endDate = moment(req.body.endDate)
             
+            let mealPlanDays = getDateArray(obj)
+            let formattedMealPlanDays = mealPlanDays.map(m => moment(m).format('dddd MMMM Do'))
+
+            
+            //creating MealPlan
             await MealPlan.create({
                 name: req.body.name,
                 startDate: req.body.startDate,
                 endDate: req.body.endDate,
-                daysCooking: req.body.daysCooking,
+                daysCooking: formattedMealPlanDays,
                 mealType: req.body.mealType,
                 favorite: req.body.favorite,
                 user: req.user.id,
