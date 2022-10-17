@@ -11,25 +11,41 @@
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
     />
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" />
   </head>
-  
+
   <body>
     <div class="navbar bg-primary text-primary-content">
       <div class="navbar-start">
         <div class="dropdown text-base-content">
           <label tabindex="0" class="btn btn-ghost btn-circle">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h7"
+              />
+            </svg>
           </label>
-          <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+          <ul
+            tabindex="0"
+            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+          >
             <li><a href="/profile">Home</a></li>
             <li><a href="/favorites">Favorites</a></li>
-            <li>  
+            <li>
               <form action="/recipe/createRecipe" method="POST">
                 <button type="submit">Create Recipe</button>
               </form>
             </li>
-            <li>  
+            <li>
               <form action="/mealPlan/createMealPlan" method="POST">
                 <button type="submit">Create MealPlan</button>
               </form>
@@ -40,7 +56,9 @@
         </div>
       </div>
       <div class="navbar-center">
-        <a class="btn btn-ghost normal-case text-3xl" href="/profile">InstaPrep</a>
+        <a class="btn btn-ghost normal-case text-3xl" href="/profile"
+          >InstaPrep</a
+        >
       </div>
       <div class="navbar-end">
         <!-- <button class="btn btn-ghost btn-circle">
@@ -56,4 +74,3 @@
     </div>
   </body>
 </html>
-
