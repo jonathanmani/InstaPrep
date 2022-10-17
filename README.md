@@ -34,6 +34,6 @@ I've also learned how to use moment to display dates correctly as well as retrie
 
 [Pomodoro Task Tracker](https://github.com/jonathanmani/Pomodoro-Task-Tracker) - Create tasks, set your priority and record pomodoro sessions with this all-in-one task tracker
 
-[Pomodoro Task Tracker](https://github.com/jonathanmani/DailyUI) - A collection of Front End designs made using TailwindCss and React
+[DailyUI](https://github.com/jonathanmani/DailyUI) - A collection of Front End designs made using TailwindCss and React
 
 [CodeWars](https://github.com/jonathanmani/CodeWars) - A collection of all the CodeWars problems I've done to practice my knowledge in Javascript.
