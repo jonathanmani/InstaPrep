@@ -1,4 +1,4 @@
-# IntaPrep
+# InstaPrep
 
 A mealprep app that minimizes the time you spend planning out your meals for the week. Load recipes in your cookbook, and with the click of a button, InstaPrep will list the meals you'll be eating for any specific day
 
