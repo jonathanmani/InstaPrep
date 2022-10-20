@@ -47,9 +47,9 @@ app.use(passport.session());
 
 app.use(flash());
 
-app.use("/", mainRoutes);
-app.use("/recipe", recipeRoutes);
-app.use("/mealPlan", mealPlanRoutes);
+app.use("/", require("./routes/main")); //mainRoutes
+app.use("/recipe", require("./routes/recipe")); //recipeRoutes
+app.use("/mealPlan", require("./routes/mealPlan")); //mealPlanRoutes
 
 app.listen(process.env.PORT, () => {
   console.log(
