@@ -8,9 +8,9 @@ const methodOverride = require("method-override");
 const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
-const mainRoutes = require("./Routes/main");
-const mealPlanRoutes = require("./Routes/mealPlan");
-const recipeRoutes = require("./Routes/recipe");
+const mainRoutes = require("./routes/main");
+const mealPlanRoutes = require("./routes/mealPlan");
+const recipeRoutes = require("./routes/recipe");
 const path = require("path");
 require("dotenv").config();
 
@@ -47,9 +47,9 @@ app.use(passport.session());
 
 app.use(flash());
 
-app.use("/", require("./Routes/main.js")); //mainRoutes
-app.use("/recipe", require("./Routes/recipe.js")); //recipeRoutes
-app.use("/mealPlan", require("./Routes/mealPlan.js")); //mealPlanRoutes
+app.use("/", require("./routes/main.js")); //mainRoutes
+app.use("/recipe", require("./routes/recipe.js")); //recipeRoutes
+app.use("/mealPlan", require("./routes/mealPlan.js")); //mealPlanRoutes
 
 app.listen(process.env.PORT, () => {
   console.log(
